@@ -1,4 +1,4 @@
-package com.yiran.galgamejs.component;
+package com.yiran.galgamelib.component;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
@@ -15,6 +15,7 @@ public abstract class AbstractGalComponent<T> {
     public int y;
     public int width;
     public int height;
+    public float scale = 1;
 
     public T setPosition(int x, int y) {
         this.x = x;
@@ -28,7 +29,14 @@ public abstract class AbstractGalComponent<T> {
         return (T) this;
     }
 
+    public T setSize(int width, int height) {
+        this.width = (int) (width*scale);
+        this.height = (int) (height*scale);
+        return (T) this;
+    }
+
     public T scale(float scale) {
+        this.scale = scale;
         this.width = (int) (this.width * scale);
         this.height = (int) (this.height * scale);
         return (T) this;
@@ -68,6 +76,7 @@ public abstract class AbstractGalComponent<T> {
 
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderTexture(0, texture);
+        RenderSystem.enableBlend();
         BufferUploader.drawWithShader(bufferBuilder.end());
     }
 

@@ -1,7 +1,7 @@
-package com.yiran.galgamejs;
+package com.yiran.galgamelib;
 
-import com.yiran.galgamejs.component.GalButton;
-import com.yiran.galgamejs.component.GalTextBox;
+import com.yiran.galgamelib.component.GalButton;
+import com.yiran.galgamelib.component.GalTextBox;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
