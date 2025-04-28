@@ -71,6 +71,7 @@ public class GalTextBox extends AbstractGalComponent<GalTextBox> {
             } else {
                 index++;
                 textBuffer = "";
+
             }
             thisOver = false;
         }
